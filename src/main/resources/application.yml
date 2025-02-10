@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: learn-jwt
+
+  config:
+    import:
+      - learn-jwt.yml
+
+  datasource:
+    url: ${learn-jwt.spring.datasource.url}
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ${learn-jwt.spring.datasource.username}
+    password: ${learn-jwt.spring.datasource.password}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.sql: debug
+    org.hibernate.orm.jdbc.bind: trace
